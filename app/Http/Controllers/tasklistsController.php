@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Message;
+use App\tasklist;
 
-class tasklistController extends Controller
+class tasklistsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class tasklistController extends Controller
      */
     public function index()
     {
-         $messages = Message::all();
+         $tasklists = tasklist::all();
 
-        return view('messages.index', [
-            'messages' => $messages,
+        return view('tasklists.index', [
+            'tasklists' => $tasklists,
         ]);
     }
 
@@ -33,7 +33,7 @@ class tasklistController extends Controller
     {
         $tasklist = new tasklist;
 
-        return view('tasklist.create', [
+        return view('tasklists.create', [
             'tasklist' => $tasklist,
         ]);
     }
@@ -63,7 +63,7 @@ class tasklistController extends Controller
     {
         $tasklist = tasklist::find($id);
 
-        return view('tasklist.show', [
+        return view('tasklists.show', [
             'tasklist' => $tasklist,
         ]);
     }
@@ -78,7 +78,7 @@ class tasklistController extends Controller
     {
         $tasklist = tasklist::find($id);
 
-        return view('messages.edit', [
+        return view('tasklists.edit', [
             'tasklist' => $tasklist,
         ]);
     }
@@ -92,7 +92,7 @@ class tasklistController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $tasklist = Message::find($id);
+         $tasklist = tasklist::find($id);
         $tasklist->content = $request->content;
         $tasklist->save();
 
