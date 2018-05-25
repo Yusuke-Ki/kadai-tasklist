@@ -2,17 +2,19 @@
 
 @section('content')
 
- <h1>メッセージ新規作成ページ</h1>
+    <h1>タスクリスト新規作成ページ</h1>
+
 
     {!! Form::model($tasklist, ['route' => 'tasklists.store']) !!}
 
-        {!! Form::label('content', 'タスク:') !!}
+        {!! Form::label('status', 'ステータス:') !!}
+        {!! Form::text('status') !!}
+
+        {!! Form::label('content', 'メッセージ:') !!}
         {!! Form::text('content') !!}
 
         {!! Form::submit('投稿') !!}
 
     {!! Form::close() !!}
-
-<!-- Write content for each page here -->
 
 @endsection
