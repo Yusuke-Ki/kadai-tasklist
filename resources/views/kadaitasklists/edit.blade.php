@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-            {!! Form::model($kadaitasklist, ['route' => ['tasklists.update', $kadaitasklist->id], 'method' => 'put']) !!}
+            {!! Form::model($kadaitasklist, ['route' => ['kadaitasklists.update', $kadaitasklist->id], 'method' => 'put']) !!}
                 <div class="form-group">
                     {!! Form::label('status', 'タイトル:') !!}
                     {!! Form::text('status', null, ['class' => 'form-control']) !!}

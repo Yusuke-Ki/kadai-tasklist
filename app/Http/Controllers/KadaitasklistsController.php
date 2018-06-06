@@ -73,7 +73,7 @@ class KadaitasklistsController extends Controller
     {
          $kadaitasklist = Kadaitasklist::find($id);
 
-        return view('tasklists.edit', [
+        return view('kadaitasklists.edit', [
             'kadaitasklist' => $kadaitasklist,
         ]);
     }
