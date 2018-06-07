@@ -79,6 +79,8 @@ class KadaitasklistsController extends Controller
             'kadaitasklist' => $kadaitasklist,
          
         ]);
+        else {
+            return view('welcome');}
     }
 
     /**
