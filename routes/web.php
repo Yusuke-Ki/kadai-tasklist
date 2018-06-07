@@ -29,6 +29,6 @@ Route::get('/', 'KadaitasklistsController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
-    Route::resource('kadaitasklists', 'KadaitasklistsController', ['only' => ['store', 'destroy']]);
+    Route::resource('kadaitasklists', 'KadaitasklistsController', ['only' => ['store','edit', 'destroy']]);
 });
 
